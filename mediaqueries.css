@@ -1,103 +1,165 @@
-@media screen and (max-width: 1400px) {
-  #profile {
-    height: 83vh;
-    margin-bottom: 6rem;
+/* ============================================================
+   Responsive rules — mobile-friendly down to 320px
+   ============================================================ */
+
+/* Laptops / small desktops */
+@media screen and (max-width: 1100px) {
+  .hero__grid {
+    grid-template-columns: 1fr 0.8fr;
+    gap: 2.5rem;
   }
-  .about-containers {
-    flex-wrap: wrap;
+  .hero__chip--1 {
+    left: -4%;
   }
-  #contact,
-  #projects {
-    height: fit-content;
+  .hero__chip--2 {
+    right: -2%;
   }
 }
 
-@media screen and (max-width: 1200px) {
-  #desktop-nav {
+/* Tablets — collapse nav + stack two-column layouts */
+@media screen and (max-width: 900px) {
+  .nav__links {
     display: none;
   }
-  #hamburger-nav {
+  .nav__burger {
     display: flex;
   }
-  #experience,
-  .experience-details-container {
-    margin-top: 2rem;
+
+  .hero {
+    min-height: auto;
+    padding-block: calc(var(--nav-h) + 3rem) 3.5rem;
+    text-align: center;
   }
-  #profile,
-  .section-container {
-    display: block;
+  .hero__grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
   }
-  .arrow {
-    display: none;
+  .hero__portrait {
+    order: -1;
+    width: min(290px, 66vw);
   }
-  section,
-  .section-container {
-    height: fit-content;
+  .hero__bio {
+    margin-inline: auto;
   }
-  section {
-    margin: 0 5%;
+  .hero__roles,
+  .hero__actions,
+  .hero__socials {
+    justify-content: center;
   }
-  .section__pic-container {
-    width: 275px;
-    height: 275px;
-    margin: 0 auto 2rem;
+
+  .about__grid {
+    grid-template-columns: 1fr;
   }
-  .about-containers {
-    margin-top: 0;
+
+  .edu {
+    max-width: none;
   }
 }
 
-@media screen and (max-width: 600px) {
-  #contact,
-  footer {
-    height: 40vh;
+/* Large phones */
+@media screen and (max-width: 640px) {
+  :root {
+    --nav-h: 64px;
+    --radius-lg: 20px;
   }
-  #profile {
-    height: 83vh;
-    margin-bottom: 0;
+
+  .logo span:last-child {
+    display: none;
   }
-  article {
-    font-size: 1rem;
+
+  .hero__chip--1 {
+    top: 4%;
+    left: -3%;
   }
-  footer nav {
-    height: fit-content;
-    margin-bottom: 2rem;
+  .hero__chip--2 {
+    bottom: 12%;
+    right: -3%;
   }
-  .about-containers,
-  .contact-info-upper-container,
-  .btn-container {
-    flex-wrap: wrap;
+  .hero__chip--3 {
+    display: none;
   }
-  .contact-info-container {
-    margin: 0;
+
+  .hero__actions .btn {
+    flex: 1 1 100%;
   }
-  .contact-info-container p,
-  .nav-links li a {
-    font-size: 1rem;
+
+  .timeline {
+    padding-left: 1.65rem;
   }
-  .experience-sub-title {
-    font-size: 1.25rem;
+  .timeline::before {
+    left: 5px;
   }
-  .logo {
-    font-size: 1.5rem;
+  .tl-item::before {
+    left: -1.65rem;
+    margin-left: 0;
+    width: 12px;
+    height: 12px;
+    top: 1.7rem;
   }
-  .nav-links {
+
+  .stat-grid {
+    grid-template-columns: 1fr;
+  }
+  .stat {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    padding: 0.85rem 1.1rem;
+  }
+  .stat__label {
+    margin-top: 0;
+  }
+
+  .gh-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-links {
     flex-direction: column;
-    gap: 0.5rem;
-    text-align: center;
   }
-  .section__pic-container {
-    width: auto;
-    height: 46vw;
+  .contact-link {
     justify-content: center;
   }
-  .section__text__p2 {
-    font-size: 1.25rem;
+
+  .footer__inner {
+    flex-direction: column;
+    text-align: center;
   }
-  .title {
-    font-size: 2rem;
+  .footer__links {
+    justify-content: center;
+    gap: 0.9rem 1rem;
   }
-  .text-container {
-    text-align: justify;
+
+  .edu {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.9rem;
+  }
+
+  .blog-card__cover {
+    aspect-ratio: 16 / 9;
+  }
+}
+
+/* Small phones */
+@media screen and (max-width: 400px) {
+  .hero__chip {
+    font-size: 0.72rem;
+    padding: 0.35rem 0.65rem;
+  }
+  .theme-toggle {
+    width: 54px;
+    height: 30px;
+  }
+  .theme-toggle__thumb {
+    width: 22px;
+    height: 22px;
+  }
+  html[data-theme="dark"] .theme-toggle__thumb {
+    transform: translateX(24px);
+  }
+  .marquee__track {
+    gap: 2rem;
   }
 }
